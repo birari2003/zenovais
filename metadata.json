@@ -1,0 +1,6 @@
+{
+  "name": "Zenovais Technologies",
+  "description": "AI-first technology company building intelligent products, AI agents, automation systems, and next-generation enterprise digital solutions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

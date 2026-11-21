@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+:root {
+  --z-primary: #075B50;
+  --z-primary-dark: #06443C;
+  --z-charcoal: #17212B;
+  --z-bg: #FAFAF7;
+  --z-surface: #FFFFFF;
+  --z-sage: #DCE9E3;
+  --z-pale-green: #EAF2ED;
+  --z-text: #17212B;
+  --z-secondary-text: #5E6872;
+  --z-border: #E4E9E5;
+  --z-font-display: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  --z-font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --z-font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--z-font-body);
+    background-color: var(--z-bg);
+    color: var(--z-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--z-bg);
+    color: var(--z-text);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--z-font-display);
+    color: var(--z-charcoal);
+    text-wrap: balance;
+  }
+
+  button:not(:disabled),
+  a[href] {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--z-primary);
+    outline-offset: 2px;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.architectural-grid {
+  background-image:
+    linear-gradient(to right, rgba(7, 91, 80, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(7, 91, 80, 0.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
