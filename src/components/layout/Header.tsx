@@ -75,7 +75,7 @@ export const Header: React.FC = () => {
           : 'border-b border-[var(--z-border)]/70 bg-[var(--z-bg)]/90 backdrop-blur-sm'
       }`}
     >
-      <div className="mx-auto flex h-[68px] max-w-[1360px] items-center justify-between gap-4 px-5 sm:px-8 xl:h-[76px] xl:px-10">
+      <div className="mx-auto flex h-[74px] max-w-[1360px] items-center justify-between gap-4 px-5 sm:px-8 xl:h-[84px] xl:px-10">
         {/* Zone 1: Brand Wordmark */}
         <Link
           to="/"
@@ -416,7 +416,7 @@ export const Header: React.FC = () => {
         {mobileOpen && (
           <motion.div
             initial={prefersReduced ? undefined : { opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'calc(100dvh - 68px)' }}
+            animate={{ opacity: 1, height: 'calc(100dvh - 74px)' }}
             exit={prefersReduced ? undefined : { opacity: 0, height: 0 }}
             transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-y-auto border-t border-[var(--z-border)] bg-[var(--z-surface)] xl:hidden"

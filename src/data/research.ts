@@ -5,7 +5,9 @@ export const researchPageMeta = {
   seo: {
     title: 'Research & Innovation',
     description:
-      'Explore Zenovais Technologies research philosophy, Generative AI exploration, Agentic AI, intelligent automation, robotics systems, and engineering perspectives.',
+      'Explore applied AI research papers, technical insights, and exploratory inquiry from the Zenovais engineering team across agents, RAG, and physical AI.',
+    keywords:
+      'AI research, machine learning research, agentic research, RAG research, artificial intelligence papers, Zenovais research',
   },
   hero: {
     kicker: 'Research & Innovation',

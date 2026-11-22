@@ -14,6 +14,9 @@ export const LegalPage: React.FC<LegalPageProps> = ({ type }) => {
   useSEO({
     title,
     description: `${title} for Zenovais Technologies (zenovais.com).`,
+    keywords: isPrivacy
+      ? 'privacy policy, Zenovais privacy, data protection, privacy terms, personal data security'
+      : 'terms of service, Zenovais terms, user agreement, website terms, legal terms',
     path: isPrivacy ? '/privacy-policy' : '/terms-of-service',
   });
 

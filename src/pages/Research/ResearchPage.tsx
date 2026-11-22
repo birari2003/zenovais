@@ -25,6 +25,7 @@ export const ResearchPage: React.FC = () => {
   useSEO({
     title: researchPageMeta.seo.title,
     description: researchPageMeta.seo.description,
+    keywords: researchPageMeta.seo.keywords,
     path: '/research',
   });
 

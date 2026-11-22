@@ -13,6 +13,7 @@ export const ContactPage: React.FC = () => {
   useSEO({
     title: contactPageMeta.seo.title,
     description: contactPageMeta.seo.description,
+    keywords: contactPageMeta.seo.keywords,
     path: '/contact',
   });
 

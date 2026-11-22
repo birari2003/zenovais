@@ -16,6 +16,9 @@ export const JobDetailPage: React.FC = () => {
   useSEO({
     title: job ? job.title : 'Role Not Found',
     description: job ? job.description : 'Explore careers at Zenovais Technologies.',
+    keywords: job
+      ? [job.title, job.department, job.location, 'Zenovais careers', 'tech job'].join(', ')
+      : undefined,
     path: `/careers/${jobId ?? ''}`,
   });
 

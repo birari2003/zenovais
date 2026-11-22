@@ -16,6 +16,9 @@ export const ProductDetailPage: React.FC = () => {
   useSEO({
     title: product ? product.name : 'Product Not Found',
     description: product ? product.shortDescription : 'Explore Zenovais products.',
+    keywords: product
+      ? [product.name, product.category, 'Zenovais products', 'AI software'].join(', ')
+      : undefined,
     path: `/products/${slug ?? ''}`,
   });
 

@@ -5,7 +5,9 @@ export const solutionsPageMeta = {
   seo: {
     title: 'AI Solutions',
     description:
-      'Explore Zenovais Technologies AI solutions: Machine Learning, Generative AI, Agentic AI, AI Automation, RAG & LLM Applications, Enterprise AI, Robotics, and AI-Powered SaaS.',
+      'Explore enterprise AI solutions from Zenovais: generative AI, agentic systems, RAG architectures, machine learning, intelligent robotics, and end-to-end automation.',
+    keywords:
+      'AI solutions, enterprise AI, generative AI solutions, agentic AI, LLM applications, RAG architecture, machine learning systems, AI automation company',
   },
   hero: {
     kicker: 'AI Solutions',

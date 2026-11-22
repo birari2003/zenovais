@@ -6,6 +6,8 @@ export const productsPageMeta = {
     title: 'Products',
     description:
       'Explore Zenovais Technologies intelligent software product platforms and architectural foundations built to simplify workflows and solve real-world problems.',
+    keywords:
+      'Zenovais products, AI platforms, intelligent software, digital products, workflow platforms, AI SaaS solutions',
   },
   hero: {
     kicker: 'Zenovais Products',

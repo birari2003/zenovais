@@ -5,7 +5,9 @@ export const aboutPageData = {
   seo: {
     title: 'About Us',
     description:
-      'Learn about Zenovais Technologies — our mission, vision, core values, brand philosophy, and disciplined engineering approach to intelligent technology.',
+      'Learn about Zenovais Technologies, our AI-first engineering philosophy, leadership principles, mission, and commitment to building intelligent systems with real-world impact.',
+    keywords:
+      'about Zenovais, AI company about, artificial intelligence team, software architects, AI engineering culture, technology innovation, intelligent systems company',
   },
   hero: {
     kicker: 'About Zenovais Technologies',

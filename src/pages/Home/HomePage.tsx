@@ -43,6 +43,8 @@ export const HomePage: React.FC = () => {
     title: 'Zenovais Technologies – Building Intelligent Tomorrow, Together',
     description:
       'Zenovais Technologies is an AI-first technology company creating intelligent products, AI agents, automation systems, and next-generation digital solutions.',
+    keywords:
+      'Zenovais, Zenovais Technologies, AI company, artificial intelligence, AI agents, enterprise AI, intelligent automation, machine learning, generative AI, RAG systems, software engineering',
     path: '/',
   });
 

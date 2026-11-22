@@ -16,6 +16,7 @@ export const IndustriesPage: React.FC = () => {
   useSEO({
     title: industriesPageMeta.seo.title,
     description: industriesPageMeta.seo.description,
+    keywords: industriesPageMeta.seo.keywords,
     path: '/industries',
   });
 

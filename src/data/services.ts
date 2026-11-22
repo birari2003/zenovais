@@ -5,7 +5,9 @@ export const servicesPageMeta = {
   seo: {
     title: 'Services',
     description:
-      'End-to-end AI consulting, custom software development, AI & data engineering, automation solutions, R&D, and product development by Zenovais Technologies.',
+      'End-to-end AI consulting, custom software engineering, data infrastructure, and automation services to take your technology from vision to production.',
+    keywords:
+      'AI services, custom software development, AI consulting, software engineering services, data engineering, technology consulting firm',
   },
   hero: {
     kicker: 'Services',

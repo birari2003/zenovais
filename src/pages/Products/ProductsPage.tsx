@@ -15,6 +15,7 @@ export const ProductsPage: React.FC = () => {
   useSEO({
     title: productsPageMeta.seo.title,
     description: productsPageMeta.seo.description,
+    keywords: productsPageMeta.seo.keywords,
     path: '/products',
   });
 

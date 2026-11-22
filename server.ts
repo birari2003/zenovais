@@ -3,6 +3,12 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
+import {
+  getSeoForPath,
+  injectSeoIntoHtml,
+  generateSitemapXml,
+  generateRobotsTxt,
+} from './src/data/seoData';
 
 dotenv.config();
 
@@ -226,20 +232,60 @@ async function startServer() {
     });
   });
 
+  app.get('/sitemap.xml', (_req: Request, res: Response) => {
+    res.type('application/xml').send(generateSitemapXml());
+  });
+
+  app.get('/robots.txt', (_req: Request, res: Response) => {
+    res.type('text/plain').send(generateRobotsTxt());
+  });
+
   if (!isProd) {
     const { createServer: createViteServer } = await import('vite');
     const vite = await createViteServer({
       server: { middlewareMode: true },
-      appType: 'spa',
+      appType: 'custom',
     });
     app.use(vite.middlewares);
+
+    app.get('*', async (req: Request, res: Response, next) => {
+      const url = req.originalUrl;
+      if (url.startsWith('/api') || path.extname(url.split('?')[0]) !== '') {
+        return next();
+      }
+      try {
+        let template = fs.readFileSync(path.resolve(__dirname, 'index.html'), 'utf-8');
+        template = await vite.transformIndexHtml(url, template);
+        const seo = getSeoForPath(req.path);
+        const html = injectSeoIntoHtml(template, seo);
+        res.status(seo.isNotFound ? 404 : 200).set({ 'Content-Type': 'text/html' }).end(html);
+      } catch (e) {
+        vite.ssrFixStacktrace(e as Error);
+        next(e);
+      }
+    });
   } else {
     const distPath = path.resolve(__dirname, 'dist');
-    app.use(express.static(distPath));
-    app.get('*', (_req: Request, res: Response) => {
+    app.use(express.static(distPath, { index: false, redirect: false }));
+    app.get('*', (req: Request, res: Response) => {
+      const cleanPath = req.path.replace(/^\/|\/$/g, '');
+      const specificFile = cleanPath
+        ? path.join(distPath, cleanPath, 'index.html')
+        : path.join(distPath, 'index.html');
+
+      const seo = getSeoForPath(req.path);
+      const statusCode = seo.isNotFound ? 404 : 200;
+
+      if (fs.existsSync(specificFile)) {
+        res.status(statusCode).sendFile(specificFile);
+        return;
+      }
+
       const indexFile = path.join(distPath, 'index.html');
       if (fs.existsSync(indexFile)) {
-        res.sendFile(indexFile);
+        const rawHtml = fs.readFileSync(indexFile, 'utf-8');
+        const html = injectSeoIntoHtml(rawHtml, seo);
+        res.status(statusCode).set({ 'Content-Type': 'text/html' }).send(html);
       } else {
         res.status(404).send('Build output not found.');
       }

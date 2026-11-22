@@ -16,6 +16,7 @@ export const SolutionsPage: React.FC = () => {
   useSEO({
     title: solutionsPageMeta.seo.title,
     description: solutionsPageMeta.seo.description,
+    keywords: solutionsPageMeta.seo.keywords,
     path: '/ai-solutions',
   });
 

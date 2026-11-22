@@ -4,7 +4,9 @@ export const contactPageMeta = {
   seo: {
     title: 'Contact Us',
     description:
-      'Start a conversation with Zenovais Technologies about AI solutions, agentic automation, custom software, or product engineering.',
+      'Get in touch with Zenovais Technologies. Discuss enterprise AI solutions, custom software engineering, strategic partnerships, or general enquiries.',
+    keywords:
+      'contact Zenovais, hire AI engineers, contact AI company, enterprise software consultation, AI advisory contact',
   },
   hero: {
     kicker: 'Contact Zenovais',

@@ -7,6 +7,8 @@ export const NotFoundPage: React.FC = () => {
   useSEO({
     title: 'Page Not Found',
     description: 'The requested page could not be found on Zenovais Technologies.',
+    path: '/404',
+    robots: 'noindex, nofollow',
   });
 
   return (

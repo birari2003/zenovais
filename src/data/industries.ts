@@ -5,7 +5,9 @@ export const industriesPageMeta = {
   seo: {
     title: 'Industries',
     description:
-      'Adaptable AI, automation, and software solutions across Healthcare, Finance, Manufacturing & Robotics, Education, Retail, and Enterprise Technology.',
+      'Domain-specific AI applications tailored for Healthcare, Fintech, Manufacturing, EdTech, Retail, and Enterprise operations.',
+    keywords:
+      'AI industries, healthcare AI, fintech AI, manufacturing robotics, edtech AI, retail ecommerce AI, enterprise intelligence',
   },
   hero: {
     kicker: 'Industries',

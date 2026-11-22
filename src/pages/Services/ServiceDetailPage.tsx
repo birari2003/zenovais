@@ -17,6 +17,14 @@ export const ServiceDetailPage: React.FC = () => {
   useSEO({
     title: service ? service.title : 'Service Not Found',
     description: service ? service.shortDescription : 'Explore Zenovais Technologies services.',
+    keywords: service
+      ? [
+          service.title,
+          ...service.capabilities.slice(0, 4),
+          'Zenovais Services',
+          'AI engineering',
+        ].join(', ')
+      : undefined,
     path: `/services/${slug ?? ''}`,
   });
 

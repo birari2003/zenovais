@@ -54,8 +54,8 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-12">
           {/* Brand Column */}
           <div className="lg:col-span-4">
-            <Link to="/" aria-label="Zenovais Technologies">
-              <ZenovaisLogo />
+            <Link to="/" aria-label="Zenovais Technologies" className="inline-block">
+              <ZenovaisLogo size="lg" className="mb-2" />
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-[var(--z-secondary-text)]">
               {footerData.company.description}

@@ -18,6 +18,14 @@ export const ResearchDetailPage: React.FC = () => {
   useSEO({
     title: article ? article.title : 'Article Not Found',
     description: article ? article.summary : 'Zenovais Technologies research insights.',
+    keywords: article
+      ? [
+          article.title,
+          article.category,
+          ...article.keyTakeaways.slice(0, 3),
+          'Zenovais Research',
+        ].join(', ')
+      : undefined,
     path: `/research/${slug ?? ''}`,
     type: 'article',
   });

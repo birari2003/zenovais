@@ -4,7 +4,9 @@ export const careersPageMeta = {
   seo: {
     title: 'Careers',
     description:
-      'Join Zenovais Technologies. Explore our engineering culture, areas of opportunity, application process, and connect with our talent community.',
+      'Join the team building intelligent tomorrow. Explore our engineering culture, core values, areas of opportunity, and join our talent community.',
+    keywords:
+      'Zenovais careers, AI engineering jobs, software engineer jobs, AI careers, tech hiring, talent community',
   },
   hero: {
     kicker: 'Careers at Zenovais',

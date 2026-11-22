@@ -52,29 +52,6 @@ export const homepageContent = {
     image: siteImages.aboutWorkspace,
     imageAlt: 'Zenovais engineering team collaborating around hardware and AI workspace systems',
   },
-  brandMeaning: {
-    kicker: 'Brand Philosophy',
-    title: 'A New Vision of Intelligent Technology.',
-    note: 'A proposed brand interpretation reflecting the architectural foundation behind our coined name.',
-    pillars: [
-      {
-        segment: 'ZENO',
-        meaning: 'Zen-like clarity, balance and thoughtful innovation.',
-      },
-      {
-        segment: 'NOVA',
-        meaning: 'A new beginning, breakthrough and powerful innovation.',
-      },
-      {
-        segment: 'AIS',
-        meaning: 'Artificial Intelligence and intelligent systems.',
-      },
-      {
-        segment: 'TECHNOLOGIES',
-        meaning: 'Engineering, research, software and future technology.',
-      },
-    ],
-  },
   solutionsSection: {
     kicker: 'AI Solutions',
     title: 'Intelligent Solutions for a Smarter Future',

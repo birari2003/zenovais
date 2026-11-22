@@ -19,6 +19,7 @@ export const ServicesPage: React.FC = () => {
   useSEO({
     title: servicesPageMeta.seo.title,
     description: servicesPageMeta.seo.description,
+    keywords: servicesPageMeta.seo.keywords,
     path: '/services',
   });
 

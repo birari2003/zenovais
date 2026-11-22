@@ -2,7 +2,6 @@ import React from 'react';
 import { CheckCircle2 } from 'lucide-react';
 import { useSEO } from '../../hooks/useSEO';
 import { aboutPageData } from '../../data/about';
-import { homepageContent } from '../../data/homepage';
 import { PageHero } from '../../components/sections/PageHero';
 import { SectionWrapper } from '../../components/layout/PageContainer';
 import { SectionHeading } from '../../components/common/SectionHeading';
@@ -20,11 +19,11 @@ export const AboutPage: React.FC = () => {
   useSEO({
     title: aboutPageData.seo.title,
     description: aboutPageData.seo.description,
+    keywords: aboutPageData.seo.keywords,
     path: '/about',
   });
 
   const { hero, whoWeAre, missionVision, coreValues, approach, cta } = aboutPageData;
-  const { brandMeaning } = homepageContent;
 
   return (
     <>
@@ -126,31 +125,6 @@ export const AboutPage: React.FC = () => {
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-[var(--z-secondary-text)]">
                     {val.description}
-                  </p>
-                </div>
-              </SpotlightCard>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
-      </SectionWrapper>
-
-      {/* Brand Philosophy */}
-      <SectionWrapper background="warm">
-        <SectionHeading
-          kicker={brandMeaning.kicker}
-          title={brandMeaning.title}
-          subtitle={brandMeaning.note}
-        />
-        <StaggerContainer className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {brandMeaning.pillars.map((pillar) => (
-            <StaggerItem key={pillar.segment}>
-              <SpotlightCard className="h-full">
-                <div className="p-6">
-                  <span className="font-mono text-sm font-bold tracking-wider text-[var(--z-primary)]">
-                    {pillar.segment}
-                  </span>
-                  <p className="mt-3 text-sm leading-relaxed text-[var(--z-secondary-text)]">
-                    {pillar.meaning}
                   </p>
                 </div>
               </SpotlightCard>

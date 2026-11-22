@@ -22,6 +22,14 @@ export const SolutionDetailPage: React.FC = () => {
     description: solution
       ? solution.shortDescription
       : 'Explore Zenovais Technologies AI solutions.',
+    keywords: solution
+      ? [
+          solution.title,
+          solution.kicker,
+          ...solution.capabilities.slice(0, 4),
+          'Zenovais AI',
+        ].join(', ')
+      : undefined,
     path: `/ai-solutions/${slug ?? ''}`,
   });
 
