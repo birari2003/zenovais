@@ -387,6 +387,96 @@ export const allRoutesSeo: PageSeoData[] = [
     lastmod: CURRENT_DATE,
   },
   {
+    path: '/industries/healthcare-life-sciences',
+    title: 'Healthcare & Life Sciences AI Solutions | Zenovais Technologies',
+    description:
+      'Streamline clinical documentation, knowledge retrieval, and operational coordination with privacy-first AI architectures and grounded clinical assistants.',
+    keywords:
+      'healthcare AI, clinical AI, medical protocol assistant, clinical documentation AI, life sciences technology, HIPAA AI architectures',
+    canonical: `${SITE_DOMAIN}/industries/healthcare-life-sciences`,
+    robots: 'index, follow',
+    type: 'website',
+    image: DEFAULT_OG_IMAGE,
+    changefreq: 'monthly',
+    priority: 0.8,
+    lastmod: CURRENT_DATE,
+  },
+  {
+    path: '/industries/finance-fintech',
+    title: 'Finance & Fintech AI Solutions | Zenovais Technologies',
+    description:
+      'Enhance analytical clarity, document verification, and governed operational automation across financial and fintech workflows.',
+    keywords:
+      'fintech AI, financial AI solutions, KYC document automation, risk analytics AI, compliance knowledge retrieval, banking software',
+    canonical: `${SITE_DOMAIN}/industries/finance-fintech`,
+    robots: 'index, follow',
+    type: 'website',
+    image: DEFAULT_OG_IMAGE,
+    changefreq: 'monthly',
+    priority: 0.8,
+    lastmod: CURRENT_DATE,
+  },
+  {
+    path: '/industries/manufacturing-robotics',
+    title: 'Manufacturing & Robotics AI Solutions | Zenovais Technologies',
+    description:
+      'Bridge industrial telemetry, computer vision inspection, and intelligent control software on modern production and manufacturing floors.',
+    keywords:
+      'manufacturing AI, industrial robotics, computer vision inspection, predictive maintenance, IoT telemetry, smart factory automation',
+    canonical: `${SITE_DOMAIN}/industries/manufacturing-robotics`,
+    robots: 'index, follow',
+    type: 'website',
+    image: DEFAULT_OG_IMAGE,
+    changefreq: 'monthly',
+    priority: 0.8,
+    lastmod: CURRENT_DATE,
+  },
+  {
+    path: '/industries/education-edtech',
+    title: 'Education & EdTech AI Solutions | Zenovais Technologies',
+    description:
+      'Design adaptive learning tools, curriculum assistants, and intuitive academic workflow platforms grounded in approved educational materials.',
+    keywords:
+      'edtech AI, education AI solutions, adaptive learning systems, curriculum study assistants, learning simulation platforms',
+    canonical: `${SITE_DOMAIN}/industries/education-edtech`,
+    robots: 'index, follow',
+    type: 'website',
+    image: DEFAULT_OG_IMAGE,
+    changefreq: 'monthly',
+    priority: 0.8,
+    lastmod: CURRENT_DATE,
+  },
+  {
+    path: '/industries/retail-ecommerce',
+    title: 'Retail & E-commerce AI Solutions | Zenovais Technologies',
+    description:
+      'Improve product discovery, catalog intelligence, and demand operations with purposeful multimodal AI and semantic search storefronts.',
+    keywords:
+      'retail AI, ecommerce AI, catalog enrichment, semantic product search, demand forecasting, intelligent customer support',
+    canonical: `${SITE_DOMAIN}/industries/retail-ecommerce`,
+    robots: 'index, follow',
+    type: 'website',
+    image: DEFAULT_OG_IMAGE,
+    changefreq: 'monthly',
+    priority: 0.8,
+    lastmod: CURRENT_DATE,
+  },
+  {
+    path: '/industries/enterprise-technology',
+    title: 'Enterprise & Technology AI Solutions | Zenovais Technologies',
+    description:
+      'Equip engineering and enterprise teams with governed AI workspaces, agentic pipelines, and scalable custom internal software platforms.',
+    keywords:
+      'enterprise technology AI, developer AI copilots, agentic workflow orchestration, enterprise AI gateway, internal knowledge hubs',
+    canonical: `${SITE_DOMAIN}/industries/enterprise-technology`,
+    robots: 'index, follow',
+    type: 'website',
+    image: DEFAULT_OG_IMAGE,
+    changefreq: 'monthly',
+    priority: 0.8,
+    lastmod: CURRENT_DATE,
+  },
+  {
     path: '/careers',
     title: 'Careers & Engineering Culture | Zenovais Technologies',
     description:

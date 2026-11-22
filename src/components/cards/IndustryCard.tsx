@@ -9,7 +9,7 @@ import { SpotlightCard } from '../animation/MotionPrimitives';
 export const IndustryCard: React.FC<{ industry: IndustryItem }> = ({ industry }) => {
   return (
     <SpotlightCard className="h-full rounded-tl-[28px] rounded-tr-[18px] rounded-br-[28px] rounded-bl-[18px]">
-      <Link to={`/industries#${industry.slug}`} className="flex h-full flex-col">
+      <Link to={`/industries/${industry.slug}`} className="flex h-full flex-col">
         <div className="relative h-48 w-full overflow-hidden">
           <SafeImage
             src={industry.image}

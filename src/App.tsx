@@ -20,6 +20,7 @@ import { ServiceDetailPage } from './pages/Services/ServiceDetailPage';
 import { ResearchPage } from './pages/Research/ResearchPage';
 import { ResearchDetailPage } from './pages/Research/ResearchDetailPage';
 import { IndustriesPage } from './pages/Industries/IndustriesPage';
+import { IndustryDetailPage } from './pages/Industries/IndustryDetailPage';
 import { CareersPage } from './pages/Careers/CareersPage';
 import { JobDetailPage } from './pages/Careers/JobDetailPage';
 import { ContactPage } from './pages/Contact/ContactPage';
@@ -44,6 +45,7 @@ const AnimatedRoutes: React.FC = () => {
           <Route path="/research" element={<ResearchPage />} />
           <Route path="/research/:slug" element={<ResearchDetailPage />} />
           <Route path="/industries" element={<IndustriesPage />} />
+          <Route path="/industries/:slug" element={<IndustryDetailPage />} />
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/careers/:jobId" element={<JobDetailPage />} />
           <Route path="/contact" element={<ContactPage />} />

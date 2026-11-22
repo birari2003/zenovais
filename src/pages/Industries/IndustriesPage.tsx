@@ -34,13 +34,13 @@ export const IndustriesPage: React.FC = () => {
       <section className="border-b border-[var(--z-border)] bg-[var(--z-surface)] py-5">
         <div className="mx-auto flex max-w-[1320px] flex-wrap items-center gap-2 px-5 sm:px-8 lg:px-12">
           {industriesData.map((ind) => (
-            <a
+            <Link
               key={ind.slug}
-              href={`#${ind.slug}`}
+              to={`/industries/${ind.slug}`}
               className="rounded-lg border border-[var(--z-border)] bg-[var(--z-bg)] px-3 py-1.5 text-xs font-semibold text-[var(--z-charcoal)] transition-colors hover:border-[var(--z-primary)] hover:text-[var(--z-primary)]"
             >
               {ind.title}
-            </a>
+            </Link>
           ))}
         </div>
       </section>
@@ -154,8 +154,11 @@ export const IndustriesPage: React.FC = () => {
                   </div>
 
                   <div className="mt-7 flex flex-wrap items-center gap-4">
-                    <Button to="/contact" withArrow>
-                      Discuss {industry.title}
+                    <Button to={`/industries/${industry.slug}`} withArrow>
+                      Explore {industry.title}
+                    </Button>
+                    <Button to="/contact" variant="secondary">
+                      Discuss Sector
                     </Button>
                     {relatedServices.map((srv) => (
                       <Link
