@@ -3,6 +3,8 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
+import nodemailer from 'nodemailer';
+import { mailConfig } from './mail.config';
 import {
   getSeoForPath,
   injectSeoIntoHtml,
@@ -11,6 +13,33 @@ import {
 } from './src/data/seoData';
 
 dotenv.config();
+
+// SMTP mailer (Gmail app password) — settings live in mail.config.ts.
+const SMTP_USER = mailConfig.user;
+const CONTACT_RECEIVER = mailConfig.receiver || SMTP_USER;
+
+const mailer =
+  mailConfig.user && mailConfig.pass
+    ? nodemailer.createTransport({
+        host: mailConfig.host,
+        port: mailConfig.port,
+        secure: mailConfig.port === 465,
+        auth: { user: mailConfig.user, pass: mailConfig.pass },
+      })
+    : null;
+
+if (!mailer) {
+  console.warn('mail.config.ts user/pass not set — contact form emails will not be sent.');
+}
+
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -83,7 +112,7 @@ async function startServer() {
     res.json({ status: 'ok', service: 'zenovais-web', timestamp: new Date().toISOString() });
   });
 
-  app.post('/api/contact', (req: Request, res: Response) => {
+  app.post('/api/contact', async (req: Request, res: Response) => {
     const clientIp = req.ip || 'unknown';
     if (!checkRateLimit(clientIp)) {
       res.status(429).json({
@@ -136,6 +165,45 @@ async function startServer() {
       submittedAt: new Date().toISOString(),
     };
     contactSubmissions.push(record);
+
+    if (mailer) {
+      const fields: [string, string][] = [
+        ['Full name', record.fullName],
+        ['Business email', record.businessEmail],
+        ['Company', record.companyName],
+        ['Phone', record.phoneNumber || '—'],
+        ['Service of interest', record.serviceOfInterest],
+        ['Project budget', record.projectBudget || '—'],
+        ['Submitted at', record.submittedAt],
+        ['Submission ID', record.id],
+      ];
+      const rowsHtml = fields
+        .map(
+          ([k, v]) =>
+            `<tr><td style="padding:6px 12px;font-weight:600;vertical-align:top">${k}</td><td style="padding:6px 12px">${escapeHtml(v)}</td></tr>`,
+        )
+        .join('');
+      try {
+        await mailer.sendMail({
+          from: `"Zenovais Website" <${SMTP_USER}>`,
+          to: CONTACT_RECEIVER,
+          replyTo: `"${record.fullName.replace(/"/g, '')}" <${record.businessEmail}>`,
+          subject: `New enquiry: ${record.serviceOfInterest} — ${record.fullName} (${record.companyName})`,
+          text:
+            fields.map(([k, v]) => `${k}: ${v}`).join('\n') + `\n\nMessage:\n${record.message}`,
+          html:
+            `<h2>New contact enquiry</h2><table style="border-collapse:collapse">${rowsHtml}</table>` +
+            `<h3>Message</h3><p style="white-space:pre-wrap">${escapeHtml(record.message)}</p>`,
+        });
+      } catch (err) {
+        console.error('Failed to send contact email:', err);
+        res.status(502).json({
+          ok: false,
+          message: 'We could not deliver your enquiry right now. Please try again shortly.',
+        });
+        return;
+      }
+    }
 
     res.status(201).json({
       ok: true,
