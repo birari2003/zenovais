@@ -7,7 +7,7 @@
 export const mailConfig = {
   host: 'smtp.gmail.com',
   port: 465,
-  user: 'zenoaistech@gmail.com',
-  pass: 'icja fbpe zunf ccnd',
-  receiver: 'zenoaistech@gmail.com',
+  user: 'zenovaistech@gmail.com',
+  pass: 'odca qkff laia rarg',
+  receiver: 'zenovaistech@gmail.com',
 };
